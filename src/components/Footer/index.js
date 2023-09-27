@@ -23,7 +23,7 @@ const Footer = () => {
           <p className="font-bold text-xl pb-4">Blogs</p>
           <ul className="flex flex-col gap-2">
             <li>
-              <a>Travel?</a>
+              <a>Travel</a>
             </li>
             <li>
               <a>Technologies</a>
@@ -74,7 +74,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col w-full">
           <p className="font-bold text-lg pb-5 text-center md:text-start">
-            Follow on.
+            Follow on:
           </p>
           <div className="flex gap-6 text-2xl text-gray-900">
             <Icon icon="basil:instagram-solid" />
