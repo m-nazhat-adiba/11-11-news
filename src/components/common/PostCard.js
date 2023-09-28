@@ -31,7 +31,7 @@ const PostCard = ({ className, data, user }) => {
           </p>
           <p className="text-small text-default-500">
             {" "}
-            {user[0] ? user[0].email : "admin@11-11.com"}
+            {user[0] ? `@${user[0].username}` : "admin@11-11.com"}
           </p>
         </div>
       </CardHeader>
