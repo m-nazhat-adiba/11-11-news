@@ -15,6 +15,7 @@ const Highlight = ({ data, users }) => {
               data={item}
               key={key}
               user={users.filter((acc) => acc.id === item.userId)}
+              isHome={true}
               className="w-[680px]"
             />
           ))}
