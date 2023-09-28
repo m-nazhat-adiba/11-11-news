@@ -12,7 +12,10 @@ const index = ({ data, users }) => {
       <div className="flex justify-between mx-40 pb-20">
         <Highlight data={data} users={users} />
         <div className="relative">
-          <SideContent user={users} className="sticky top-0" />
+          <SideContent
+            user={users}
+            className="h-screen overflow-y-scroll sticky top-0 z-[9999] scrollbar-hide"
+          />
         </div>
       </div>
     </Layout>
