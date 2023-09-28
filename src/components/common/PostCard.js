@@ -8,9 +8,11 @@ import {
   Link,
   Image,
 } from "@nextui-org/react";
+import clsx from "clsx";
+import CommentCard from "./CommentCard";
 
-const PostCard = ({ className, data, user }) => {
-  console.log(user[0].tags);
+const PostCard = ({ className, data, user, isHome, comment }) => {
+  console.log("komen", comment);
   return (
     <Card className={className}>
       <CardHeader className="flex gap-3">
@@ -39,12 +41,35 @@ const PostCard = ({ className, data, user }) => {
       <CardBody>
         <p className="font-bold mb-2">{data.title}</p>
         <p>{data.body}</p>
+        <div className={clsx("flex gap-2 pt-6", isHome ? "hidden" : null)}>
+          {data.tags.map((item) => (
+            <p>{`#${item}`}</p>
+          ))}
+        </div>
       </CardBody>
       <Divider />
-      <CardFooter className="text-sm text-gray-500 px-6 flex gap-2">
-        {data.tags.map((item) => (
-          <p>{item}</p>
-        ))}
+      <CardFooter className="text-sm text-gray-500 px-6 flex flex-col">
+        <div className="flex justify-between w-full">
+          <div className={clsx("flex gap-2", isHome ? null : "hidden")}>
+            {data.tags.map((item) => (
+              <p>{`#${item}`}</p>
+            ))}
+          </div>
+          <Link
+            className={clsx("block", isHome ? null : "hidden")}
+            href={`/posts/${data.id}`}
+          >
+            <button className="font-medium">Read more</button>
+          </Link>
+        </div>
+        {isHome === false ? (
+          <div className="flex flex-col w-full mt-1">
+            <p className="text-gray-900 font-semibold">Comments</p>
+            {comment.map((item) => (
+              <CommentCard comment={item} />
+            ))}
+          </div>
+        ) : null}
       </CardFooter>
     </Card>
   );
