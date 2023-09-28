@@ -3,13 +3,17 @@ import Header from "@/containers/homepage/Header";
 import Highlight from "@/containers/homepage/Highlight";
 import React from "react";
 import axios from "axios";
+import SideContent from "@/containers/homepage/SideContent";
 
 const index = ({ data, users }) => {
   return (
     <Layout>
       <Header />
-      <div className="mx-40">
+      <div className="flex justify-between mx-40 pb-20">
         <Highlight data={data} users={users} />
+        <div className="relative">
+          <SideContent user={users} className="sticky top-0" />
+        </div>
       </div>
     </Layout>
   );
