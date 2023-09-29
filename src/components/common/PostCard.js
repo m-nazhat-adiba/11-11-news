@@ -12,7 +12,6 @@ import clsx from "clsx";
 import CommentCard from "./CommentCard";
 
 const PostCard = ({ className, data, user, isHome, comment }) => {
-  console.log("komen", comment);
   return (
     <Card className={className}>
       <CardHeader className="flex gap-3">
@@ -32,7 +31,6 @@ const PostCard = ({ className, data, user, isHome, comment }) => {
             {user[0] ? `${user[0].firstName} ${user[0].lastName}` : "admin"}
           </p>
           <p className="text-small text-default-500">
-            {" "}
             {user[0] ? `@${user[0].username}` : "admin@11-11.com"}
           </p>
         </div>
@@ -42,8 +40,8 @@ const PostCard = ({ className, data, user, isHome, comment }) => {
         <p className="font-bold mb-2">{data.title}</p>
         <p>{data.body}</p>
         <div className={clsx("flex gap-2 pt-6", isHome ? "hidden" : null)}>
-          {data.tags.map((item) => (
-            <p>{`#${item}`}</p>
+          {data.tags.map((item, key) => (
+            <p key={key}>{`#${item}`}</p>
           ))}
         </div>
       </CardBody>
@@ -51,8 +49,8 @@ const PostCard = ({ className, data, user, isHome, comment }) => {
       <CardFooter className="text-sm text-gray-500 px-6 flex flex-col">
         <div className="flex justify-between w-full">
           <div className={clsx("flex gap-2", isHome ? null : "hidden")}>
-            {data.tags.map((item) => (
-              <p>{`#${item}`}</p>
+            {data.tags.map((item, key) => (
+              <p key={key}>{`#${item}`}</p>
             ))}
           </div>
           <Link
@@ -65,8 +63,8 @@ const PostCard = ({ className, data, user, isHome, comment }) => {
         {isHome === false ? (
           <div className="flex flex-col w-full mt-1">
             <p className="text-gray-900 font-semibold">Comments</p>
-            {comment.map((item) => (
-              <CommentCard comment={item} />
+            {comment.map((item, key) => (
+              <CommentCard comment={item} key={key} />
             ))}
           </div>
         ) : null}
