@@ -9,7 +9,9 @@ const NavBar = () => {
         <Image src="/logo.svg" width={80} height={30} alt="logo" />
       </Link>
       <ul className="flex gap-4 text-gray-900">
-        <li>Home</li>
+        <Link href={"/"}>
+          <li>Home</li>
+        </Link>
         <li>Blogs</li>
         <li>Pages</li>
         <li>About</li>
