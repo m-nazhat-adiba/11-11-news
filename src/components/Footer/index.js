@@ -20,19 +20,19 @@ const Footer = () => {
 
       <div className="text-gray-900 grid grid-cols-2 md:grid-cols-2 md:w-[40%] gap-10 md:gap-16 md:pl-8">
         <div className="flex flex-col">
-          <p className="font-bold text-xl pb-4">Blogs</p>
+          <p className="font-bold text-xl pb-4">Navigation</p>
           <ul className="flex flex-col gap-2">
             <li>
-              <a>Travel</a>
+              <a>Home</a>
             </li>
             <li>
-              <a>Technologies</a>
+              <a>Blogs</a>
             </li>
             <li>
-              <a>Business</a>
+              <a>Pages</a>
             </li>
             <li>
-              <a>Fashion</a>
+              <a>About</a>
             </li>
           </ul>
         </div>
