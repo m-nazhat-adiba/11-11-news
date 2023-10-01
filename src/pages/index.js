@@ -1,28 +1,35 @@
+import axios from "axios";
+import Head from "next/head";
+import React from "react";
+
 import Layout from "@/components/Layout";
 import Header from "@/containers/homepage/Header";
 import Highlight from "@/containers/homepage/Highlight";
-import React from "react";
-import axios from "axios";
 import SideContent from "@/containers/homepage/SideContent";
 import UserPanel from "@/containers/homepage/UserPanel";
 
 const index = ({ data, users }) => {
   return (
-    <Layout>
-      <Header />
-      <div className="flex justify-between mx-28 pb-20">
-        <div className="relative">
-          <UserPanel />
+    <>
+      <Head>
+        <title>The Blog</title>
+      </Head>
+      <Layout>
+        <Header />
+        <div className="flex justify-between mx-28 pb-20">
+          <div className="relative">
+            <UserPanel />
+          </div>
+          <Highlight data={data} users={users} />
+          <div className="relative">
+            <SideContent
+              user={users}
+              className="h-screen overflow-y-scroll sticky top-0 z-[9999] scrollbar-hide"
+            />
+          </div>
         </div>
-        <Highlight data={data} users={users} />
-        <div className="relative">
-          <SideContent
-            user={users}
-            className="h-screen overflow-y-scroll sticky top-0 z-[9999] scrollbar-hide"
-          />
-        </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 
