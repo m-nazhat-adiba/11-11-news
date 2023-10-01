@@ -8,7 +8,7 @@ import Highlight from "@/containers/homepage/Highlight";
 import SideContent from "@/containers/homepage/SideContent";
 import UserPanel from "@/containers/homepage/UserPanel";
 
-const index = ({ data, users }) => {
+const index = ({ data, users, todos }) => {
   return (
     <>
       <Head>
@@ -16,7 +16,7 @@ const index = ({ data, users }) => {
       </Head>
       <Layout>
         <Header />
-        <div className="flex justify-between mx-28 pb-20">
+        <div className="flex justify-between mx-8 pb-20">
           <div className="relative">
             <UserPanel />
           </div>
@@ -24,6 +24,7 @@ const index = ({ data, users }) => {
           <div className="relative">
             <SideContent
               user={users}
+              todo={todos}
               className="h-screen overflow-y-scroll sticky top-0 z-[9999] scrollbar-hide"
             />
           </div>
@@ -42,7 +43,11 @@ export const getServerSideProps = async () => {
   const res2 = await axios.get("https://dummyjson.com/users?limit=0");
   const users = await res2.data.users;
 
-  return { props: { data, users } };
+  //todo endpoint
+  const res3 = await axios.get("https://dummyjson.com/todos");
+  const todos = await res3.data.todos;
+
+  return { props: { data, users, todos } };
 };
 
 export default index;
