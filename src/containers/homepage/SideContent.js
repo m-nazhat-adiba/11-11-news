@@ -1,8 +1,8 @@
 import React from "react";
 
 import Tag from "@/components/common/Tag";
-import UserCard from "@/components/common/UserCard";
 import ToDoCard from "@/components/common/ToDoCard";
+import UserCard from "@/components/common/UserCard";
 
 const SideContent = ({ user, className, todo }) => {
   const limit = 5;

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Card,
   CardBody,
@@ -9,6 +8,7 @@ import {
   Link,
 } from "@nextui-org/react";
 import clsx from "clsx";
+import React from "react";
 
 const ToDoCard = ({ todos, user, className, isHome }) => {
   return (

@@ -2,9 +2,8 @@ import axios from "axios";
 import Head from "next/head";
 import React from "react";
 
-import PostCard from "@/components/common/PostCard";
-import Layout from "@/components/Layout";
 import ToDoCard from "@/components/common/ToDoCard";
+import Layout from "@/components/Layout";
 
 const ToDo = ({ data, users }) => {
   return (

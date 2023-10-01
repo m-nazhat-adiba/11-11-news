@@ -16,7 +16,7 @@ const index = ({ data, users, todos }) => {
       </Head>
       <Layout>
         <Header />
-        <div className="flex justify-between mx-8 pb-20">
+        <div className="flex justify-between mx-12 pb-20">
           <div className="relative">
             <UserPanel />
           </div>
@@ -44,7 +44,7 @@ export const getServerSideProps = async () => {
   const users = await res2.data.users;
 
   //todo endpoint
-  const res3 = await axios.get("https://dummyjson.com/todos");
+  const res3 = await axios.get("https://dummyjson.com/todos?limit=6");
   const todos = await res3.data.todos;
 
   return { props: { data, users, todos } };
