@@ -2,11 +2,24 @@ import React from "react";
 
 import Tag from "@/components/common/Tag";
 import UserCard from "@/components/common/UserCard";
+import ToDoCard from "@/components/common/ToDoCard";
 
-const SideContent = ({ user, className }) => {
+const SideContent = ({ user, className, todo }) => {
   const limit = 5;
   return (
-    <div className={`flex flex-col ${className} w-80`}>
+    <div className={`flex flex-col ${className} w-96 px-4`}>
+      <h1 className="text-gray-900 text-xl font-semibold my-6">To do</h1>
+      <div className="flex flex-col gap-4">
+        {todo.slice(0, limit).map((item, key) => (
+          <ToDoCard
+            user={user.filter((acc) => acc.id === item.id)}
+            todos={item}
+            isHome={true}
+            key={key}
+            className="w-full"
+          />
+        ))}
+      </div>
       <h1 className="text-gray-900 text-xl font-semibold my-6">
         People you might follow
       </h1>
