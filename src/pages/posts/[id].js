@@ -1,15 +1,27 @@
-import React from "react";
 import axios from "axios";
-import Layout from "@/components/Layout";
+import Head from "next/head";
+import React from "react";
+
 import PostCard from "@/components/common/PostCard";
+import Layout from "@/components/Layout";
 
 const PostDetails = ({ users, data, comment }) => {
   return (
-    <Layout>
-      <div className="w-[680px] mx-auto flex-grow mb-12">
-        <PostCard data={data} user={[users]} isHome={false} comment={comment} />
-      </div>
-    </Layout>
+    <>
+      <Head>
+        <title>{data.title}</title>
+      </Head>
+      <Layout>
+        <div className="w-[680px] mx-auto flex-grow mb-12">
+          <PostCard
+            data={data}
+            user={[users]}
+            isHome={false}
+            comment={comment}
+          />
+        </div>
+      </Layout>
+    </>
   );
 };
 
