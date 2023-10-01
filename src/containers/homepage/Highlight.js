@@ -1,4 +1,5 @@
 import React from "react";
+
 import PostCard from "@/components/common/PostCard";
 
 const Highlight = ({ data, users }) => {
@@ -9,7 +10,7 @@ const Highlight = ({ data, users }) => {
       </h1>
       <div className="flex">
         {/* Main Content */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-6">
           {data.map((item, key) => (
             <PostCard
               data={item}

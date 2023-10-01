@@ -1,12 +1,12 @@
-import React from "react";
 import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
   Avatar,
   Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
 } from "@nextui-org/react";
+import React from "react";
 
 const UserCard = ({ user }) => {
   const [isFollowed, setIsFollowed] = React.useState(false);
@@ -39,7 +39,7 @@ const UserCard = ({ user }) => {
           {isFollowed ? "Unfollow" : "Follow"}
         </Button>
       </CardHeader>
-      <CardBody className="px-3 py-0 text-small text-default-400">
+      <CardBody className="px-3 py-0 text-small text-default-500">
         <p>{`${user.company.title} of ${user.company.name}`}</p>
       </CardBody>
       <CardFooter className="gap-3">

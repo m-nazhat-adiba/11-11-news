@@ -1,14 +1,15 @@
-import React from "react";
 import {
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
+  CardHeader,
   Divider,
-  Link,
   Image,
+  Link,
 } from "@nextui-org/react";
 import clsx from "clsx";
+import React from "react";
+
 import CommentCard from "./CommentCard";
 
 const PostCard = ({ className, data, user, isHome, comment }) => {

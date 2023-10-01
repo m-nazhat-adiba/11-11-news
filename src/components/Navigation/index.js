@@ -8,7 +8,7 @@ const NavBar = () => {
       <Link href={"/"}>
         <Image src="/logo.svg" width={80} height={30} alt="logo" />
       </Link>
-      <ul className="flex gap-4 text-gray-900">
+      <ul className="flex gap-6 text-gray-900">
         <Link href={"/"}>
           <li>Home</li>
         </Link>

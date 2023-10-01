@@ -1,6 +1,7 @@
+import React from "react";
+
 import Tag from "@/components/common/Tag";
 import UserCard from "@/components/common/UserCard";
-import React from "react";
 
 const SideContent = ({ user, className }) => {
   const limit = 5;
